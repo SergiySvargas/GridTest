@@ -43,15 +43,27 @@
     <Filter Include="Source\GridTest\Unit">
       <UniqueIdentifier>{32a33ee3-3c79-4acd-8a78-e1561e05dedc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\GridTest\Simulation">
+      <UniqueIdentifier>{059afbc5-1c52-431c-be80-1c25a59c9dfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit.cpp">
+      <Filter>Source\GridTest\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GridTest\Simulation\Simulation.cpp">
+      <Filter>Source\GridTest\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_UT.cpp">
       <Filter>Source\GridTest\Unit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\GridTest\Unit\Unit.h">
       <Filter>Source\GridTest\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GridTest\Simulation\Simulation.h">
+      <Filter>Source\GridTest\Simulation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

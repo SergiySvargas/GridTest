@@ -72,7 +72,6 @@ template<> GRIDTEST_API UClass* StaticClass<UUnit>()
 {
 	return UUnit::StaticClass();
 }
-UUnit::UUnit(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(UUnit);
 UUnit::~UUnit() {}
 // End Class UUnit
