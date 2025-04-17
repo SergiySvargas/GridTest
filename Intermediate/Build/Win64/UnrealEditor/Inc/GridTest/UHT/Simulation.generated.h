@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UUnit;
 #ifdef GRIDTEST_Simulation_generated_h
 #error "Simulation.generated.h already included, missing '#pragma once' in Simulation.h"
 #endif
@@ -16,6 +17,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_Code_GridTest_Source_GridTest_Simulation_Simulation_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSimulationTick); \
+	DECLARE_FUNCTION(execGetUnit); \
 	DECLARE_FUNCTION(execInit);
 
 

@@ -21,6 +21,9 @@ public:
 	USimulation();
 
 	UFUNCTION(BlueprintCallable) void Init();
+	
+	UFUNCTION(BlueprintCallable) UUnit* GetUnit(int idx);
+	
 	UFUNCTION(BlueprintCallable) void SimulationTick();
 
 private:
