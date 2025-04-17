@@ -23,7 +23,12 @@ void USimulation::Init()
 
 UUnit* USimulation::GetUnit(int idx)
 {
-	return Units[idx];
+	if (idx >= 0 && idx < NUM_UNITS)
+	{
+		return Units[idx];
+	}
+	check(false);
+	return Units[0];
 }
 
 void USimulation::SimulationTick()
