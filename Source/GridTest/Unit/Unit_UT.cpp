@@ -6,47 +6,83 @@ bool FUnit_UT::RunTest(const FString& Parameters)
 {
 	auto* unit = NewObject<UUnit>();
 	FIntVector2 targetPos(10, 10);
+	bool moved = false;
 	
 	unit->Position = FIntVector2(0, 0);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(4, 4));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(5, 5));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(5, 5));
 
 	unit->Position = FIntVector2(10, 0);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(10, 4));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(10, 5));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(10, 5));
 
 	unit->Position = FIntVector2(0, 10);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(4, 10));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(5, 10));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(5, 10));
 
 	unit->Position = FIntVector2(0, 3);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(4, 5));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(5, 5));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(5, 5));
 
 	unit->Position = FIntVector2(20, 20);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(16, 16));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(15, 15));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(15, 15));
 
 	unit->Position = FIntVector2(0, 20);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(4, 16));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(5, 15));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(5, 15));
 
 	unit->Position = FIntVector2(20, 0);
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
 	check(unit->Position == FIntVector2(16, 4));
-	unit->MoveStepTowardsPos(targetPos);
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == true);
+	check(unit->Position == FIntVector2(15, 5));
+	moved = unit->MoveStepTowardsPos(targetPos);
+	check(moved == false);
 	check(unit->Position == FIntVector2(15, 5));
 
 	return true;

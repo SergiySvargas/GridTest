@@ -29,23 +29,6 @@ void USimulation::SimulationTick()
 }
 
 bool USimulation::TryMoveUnitsCloser()
-{/*
-	const int posDiff = Units[1]->Position - Units[0]->Position;
-
-	if (abs(posDiff.X) > Units[0]->GetAttackRange())
-	{
-		int n
-		Units[0]->Position.X += Units[0]->GetWalkPerTimeStep() * 
-	}
-	*/
+{	
 	return false;
-}
-
-void USimulation::MovePosCloser(int posDiff, int requiredRange, int moveRange, int& posToMove)
-{/*
-	if (abs(posDiff) > requiredRange)
-	{
-		const int maxPosChange = posDiff
-		posToMove = std::max()
-	}*/
 }

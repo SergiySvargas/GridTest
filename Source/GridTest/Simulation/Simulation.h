@@ -26,5 +26,4 @@ public:
 private:
 	
 	bool TryMoveUnitsCloser();
-	static void MovePosCloser(int posDiff, int requiredRange, int moveRange, int& posToMove);
 };

@@ -23,8 +23,8 @@ public:
 	int HitPoints = 0;
 
 	UUnit();
-	void MoveStepTowardsPos(const FIntVector2& targetPos);
+	bool MoveStepTowardsPos(const FIntVector2& targetPos);
 
 private:
-	void MoveCoordinateByDistance(int& coordinate, const int distanceCoord);
+	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);
 };
