@@ -12,13 +12,13 @@ USimulation::USimulation()
 
 void USimulation::Init()
 {
-	static const int HALF_GRID_SIZE = GRID_SIZE / 2;
+	static const int ALLOWED_POSITIONS_Y = GRID_SIZE * 4 / 10;
 
 	Units[0]->Position.X = std::rand() % GRID_SIZE;
-	Units[0]->Position.Y = std::rand() % HALF_GRID_SIZE;
+	Units[0]->Position.Y = std::rand() % ALLOWED_POSITIONS_Y;
 
 	Units[1]->Position.X = std::rand() % GRID_SIZE;
-	Units[1]->Position.Y = HALF_GRID_SIZE + std::rand() % HALF_GRID_SIZE;
+	Units[1]->Position.Y = GRID_SIZE - 1 - std::rand() % ALLOWED_POSITIONS_Y;
 }
 
 UUnit* USimulation::GetUnit(int idx)
