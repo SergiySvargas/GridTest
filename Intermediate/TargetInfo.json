@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GridTest",
+			"Path": "..\\Source\\GridTest.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GridTestEditor",
+			"Path": "..\\Source\\GridTestEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
