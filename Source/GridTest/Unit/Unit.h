@@ -20,10 +20,12 @@ public:
 	static const int MAX_HP = 5;
 
 	FIntVector2 Position;
-	int HitPoints = 0;
+	UPROPERTY(BlueprintReadOnly) int HitPoints = 0;
 
 	UUnit();
 	bool MoveStepTowardsPos(const FIntVector2& targetPos);
+
+	UFUNCTION(BlueprintPure) FVector2D GetBlueprintCompatiblePosition();
 
 private:
 	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);

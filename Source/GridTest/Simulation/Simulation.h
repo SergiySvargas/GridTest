@@ -22,7 +22,7 @@ public:
 
 	UFUNCTION(BlueprintCallable) void Init();
 	
-	UFUNCTION(BlueprintCallable) UUnit* GetUnit(int idx);
+	UFUNCTION(BlueprintPure) UUnit* GetUnit(int idx);
 	
 	UFUNCTION(BlueprintCallable) void SimulationTick();
 
