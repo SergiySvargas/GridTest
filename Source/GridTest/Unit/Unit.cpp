@@ -15,11 +15,6 @@ bool UUnit::MoveStepTowardsPos(const FIntVector2& targetPos)
 	return movedX || movedY;
 }
 
-FVector2D UUnit::GetBlueprintCompatiblePosition()
-{
-	return FVector2D(Position.X, Position.Y);
-}
-
 bool UUnit::MoveCoordinateByDistance(int& coordinate, const int distanceCoord)
 {
 	const int absDist = abs(distanceCoord);

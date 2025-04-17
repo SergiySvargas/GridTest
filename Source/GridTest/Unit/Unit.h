@@ -1,5 +1,3 @@
-// Copyright: Ievtushenko Sergii V., DOB 31.12.1980, since March 2025. All rights reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -24,8 +22,6 @@ public:
 
 	UUnit();
 	bool MoveStepTowardsPos(const FIntVector2& targetPos);
-
-	UFUNCTION(BlueprintPure) FVector2D GetBlueprintCompatiblePosition();
 
 private:
 	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);
