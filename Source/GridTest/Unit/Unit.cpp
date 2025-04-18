@@ -14,8 +14,6 @@ bool UUnit::TryAttack(UUnit& target)
 	{
 		return false;
 	}
-
-	const auto distance = target.Position - Position;
 	
 	if (IsWithinAttackRange(target))
 	{

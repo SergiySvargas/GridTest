@@ -34,18 +34,21 @@ UUnit* USimulation::GetUnit(int idx)
 void USimulation::SimulationTick(TArray<bool>& justAttacked)
 {
 	TryMoveUnitsCloser();
+	TryUnitAttacks(justAttacked);
+}
 
+void USimulation::TryMoveUnitsCloser()
+{	
+	Units[0]->TryMoveTowardsPos(Units[1]->Position);
+	Units[1]->TryMoveTowardsPos(Units[0]->Position);
+}
+
+void USimulation::TryUnitAttacks(TArray<bool>& justAttacked)
+{
 	justAttacked.SetNum(NUM_UNITS);
 	for (int i = 0; i < NUM_UNITS; ++i)
 	{
 		const int targetIdx = !i;
 		justAttacked[i] = Units[i]->TryAttackOrDecrementStep(*Units[targetIdx]);
 	}
-}
-
-bool USimulation::TryMoveUnitsCloser()
-{	
-	bool moved0 = Units[0]->TryMoveTowardsPos(Units[1]->Position);
-	bool moved1 = Units[1]->TryMoveTowardsPos(Units[0]->Position);
-	return moved0 || moved1;
 }
