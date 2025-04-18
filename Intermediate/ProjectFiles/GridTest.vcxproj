@@ -252,6 +252,7 @@
     <ClCompile Include="..\..\Source\GridTest\Simulation\Simulation.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryAttack_UT.cpp" />
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryIfReadyToAttack.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryMoveTowardsPos_UT.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Utility\Utility.cpp" />
     <None Include="..\..\GridTest.uproject" />

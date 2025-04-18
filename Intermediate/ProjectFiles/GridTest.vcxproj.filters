@@ -66,6 +66,9 @@
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryMoveTowardsPos_UT.cpp">
       <Filter>Source\GridTest\Unit</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryIfReadyToAttack.cpp">
+      <Filter>Source\GridTest\Unit</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\GridTest\Unit\Unit.h">

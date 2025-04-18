@@ -23,7 +23,7 @@ public:
 
 	bool TryMoveTowardsPos(const FIntVector2& targetPos);
 	bool TryAttack(UUnit& target);
-	bool TryAttackOrDecrementStep(UUnit& target);
+	bool TryIfReadyToAttack(UUnit& target);
 
 private:
 	void InitHealth();

@@ -21,24 +21,25 @@ bool UUnit::TryAttack(UUnit& target)
 	return false;
 }
 
-bool UUnit::TryAttackOrDecrementStep(UUnit& target)
+bool UUnit::TryIfReadyToAttack(UUnit& target)
 {
 	if (IsWithinAttackRange(target))
 	{
 		if (CurrentAttackStep == TimeStepsPerAttack)
 		{
 			CurrentAttackStep = 1;
-			return TryAttack(target);
+			return true;
 		}
 		else
 		{
 			CurrentAttackStep += 1;
+			return false;
 		}
 	}
 	return false;
 }
 
-void UUnit::InitHealth();
+void UUnit::InitHealth()
 {
 	static const int MIN_HP = 2;
 	static const int MAX_HP = 5;
