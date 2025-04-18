@@ -26,6 +26,7 @@ public:
 	bool TryAttackOrDecrementStep(UUnit& target);
 
 private:
+	void InitHealth();
 	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);
 	bool IsWithinAttackRange(const UUnit& target) const;
 };

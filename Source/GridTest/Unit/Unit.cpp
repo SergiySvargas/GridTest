@@ -2,10 +2,7 @@
 
 UUnit::UUnit()
 {
-	static const int MIN_HP = 2;
-	static const int MAX_HP = 5;
-
-	HitPoints = MIN_HP + std::rand() % (MAX_HP - MIN_HP);
+	InitHealth();
 }
 
 bool UUnit::TryAttack(UUnit& target)
@@ -41,6 +38,13 @@ bool UUnit::TryAttackOrDecrementStep(UUnit& target)
 	return false;
 }
 
+void UUnit::InitHealth();
+{
+	static const int MIN_HP = 2;
+	static const int MAX_HP = 5;
+
+	HitPoints = MIN_HP + std::rand() % (MAX_HP - MIN_HP);
+}
 
 bool UUnit::TryMoveTowardsPos(const FIntVector2& targetPos)
 {
