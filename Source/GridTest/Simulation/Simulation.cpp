@@ -39,7 +39,7 @@ void USimulation::SimulationTick(TArray<bool>& justAttacked)
 	for (int i = 0; i < NUM_UNITS; ++i)
 	{
 		const int targetIdx = !i;
-		justAttacked[i] = Units[i]->TryAttack(*Units[targetIdx]);
+		justAttacked[i] = Units[i]->TryAttackOrDecrementStep(*Units[targetIdx]);
 	}
 }
 

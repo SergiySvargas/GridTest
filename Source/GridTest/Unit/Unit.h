@@ -10,7 +10,9 @@ class GRIDTEST_API UUnit : public UObject
 
 	int MovePerTimeStep = 4;
 	int AttackRange = 5;
-	int TimeStepsPerAttack = 10;
+	int TimeStepsPerAttack = 3;
+
+	int CurrentAttackStep = TimeStepsPerAttack;
 
 public:
 
@@ -21,7 +23,9 @@ public:
 
 	bool MoveStepTowardsPos(const FIntVector2& targetPos);
 	bool TryAttack(UUnit& target);
+	bool TryAttackOrDecrementStep(UUnit& target);
 
 private:
 	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);
+	bool IsWithinAttackRange(const UUnit& target) const;
 };

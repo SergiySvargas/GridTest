@@ -17,7 +17,7 @@ bool UUnit::TryAttack(UUnit& target)
 
 	const auto distance = target.Position - Position;
 	
-	if (abs(distance.X) <= AttackRange && abs(distance.Y) <= AttackRange)
+	if (IsWithinAttackRange(target))
 	{
 		target.HitPoints -= 1;
 		return true;
@@ -25,6 +25,24 @@ bool UUnit::TryAttack(UUnit& target)
 
 	return false;
 }
+
+bool UUnit::TryAttackOrDecrementStep(UUnit& target)
+{
+	if (IsWithinAttackRange(target))
+	{
+		if (CurrentAttackStep == TimeStepsPerAttack)
+		{
+			CurrentAttackStep = 1;
+			return TryAttack(target);
+		}
+		else
+		{
+			CurrentAttackStep += 1;
+		}
+	}
+	return false;
+}
+
 
 bool UUnit::MoveStepTowardsPos(const FIntVector2& targetPos)
 {
@@ -46,4 +64,10 @@ bool UUnit::MoveCoordinateByDistance(int& coordinate, const int distanceCoord)
 		return true;
 	}
 	return false;
+}
+
+bool UUnit::IsWithinAttackRange(const UUnit& target) const
+{
+	const auto distance = target.Position - Position;
+	return abs(distance.X) <= AttackRange && abs(distance.Y) <= AttackRange;
 }
