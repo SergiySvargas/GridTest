@@ -57,11 +57,14 @@
     <ClCompile Include="..\..\Source\GridTest\Simulation\Simulation.cpp">
       <Filter>Source\GridTest\Simulation</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_UT.cpp">
-      <Filter>Source\GridTest\Unit</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\GridTest\Utility\Utility.cpp">
       <Filter>Source\GridTest\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_MoveStepTowardsPos_UT.cpp">
+      <Filter>Source\GridTest\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_Attack_UT.cpp">
+      <Filter>Source\GridTest\Unit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

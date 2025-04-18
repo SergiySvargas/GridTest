@@ -14,14 +14,13 @@ class GRIDTEST_API UUnit : public UObject
 
 public:
 
-	static const int MIN_HP = 2;
-	static const int MAX_HP = 5;
-
 	FIntVector2 Position;
 	UPROPERTY(BlueprintReadOnly) int HitPoints = 0;
 
 	UUnit();
+
 	bool MoveStepTowardsPos(const FIntVector2& targetPos);
+	bool Attack(UUnit& target);
 
 private:
 	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);
