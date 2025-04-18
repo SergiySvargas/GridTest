@@ -44,7 +44,7 @@ bool UUnit::TryAttackOrDecrementStep(UUnit& target)
 }
 
 
-bool UUnit::MoveStepTowardsPos(const FIntVector2& targetPos)
+bool UUnit::TryMoveTowardsPos(const FIntVector2& targetPos)
 {
 	const auto distance = targetPos - Position;
 

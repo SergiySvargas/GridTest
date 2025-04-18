@@ -21,7 +21,7 @@ public:
 
 	UUnit();
 
-	bool MoveStepTowardsPos(const FIntVector2& targetPos);
+	bool TryMoveTowardsPos(const FIntVector2& targetPos);
 	bool TryAttack(UUnit& target);
 	bool TryAttackOrDecrementStep(UUnit& target);
 

@@ -45,7 +45,7 @@ void USimulation::SimulationTick(TArray<bool>& justAttacked)
 
 bool USimulation::TryMoveUnitsCloser()
 {	
-	bool moved0 = Units[0]->MoveStepTowardsPos(Units[1]->Position);
-	bool moved1 = Units[1]->MoveStepTowardsPos(Units[0]->Position);
+	bool moved0 = Units[0]->TryMoveTowardsPos(Units[1]->Position);
+	bool moved1 = Units[1]->TryMoveTowardsPos(Units[0]->Position);
 	return moved0 || moved1;
 }
