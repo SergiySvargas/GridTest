@@ -12,13 +12,7 @@ USimulation::USimulation()
 
 void USimulation::Init()
 {
-	static const int ALLOWED_POSITIONS_Y = GRID_SIZE * 4 / 10;
-
-	Units[0]->Position.X = std::rand() % GRID_SIZE;
-	Units[0]->Position.Y = std::rand() % ALLOWED_POSITIONS_Y;
-
-	Units[1]->Position.X = std::rand() % GRID_SIZE;
-	Units[1]->Position.Y = GRID_SIZE - 1 - std::rand() % ALLOWED_POSITIONS_Y;
+	InitUnitPositions();
 }
 
 UUnit* USimulation::GetUnit(int idx)
@@ -35,6 +29,17 @@ void USimulation::SimulationTick(TArray<bool>& justAttacked)
 {
 	TryMoveUnitsCloser();
 	TryUnitAttacks(justAttacked);
+}
+
+void USimulation::InitUnitPositions()
+{
+	static const int ALLOWED_POSITIONS_Y = GRID_SIZE * 4 / 10;
+
+	Units[0]->Position.X = std::rand() % GRID_SIZE;
+	Units[0]->Position.Y = std::rand() % ALLOWED_POSITIONS_Y;
+
+	Units[1]->Position.X = std::rand() % GRID_SIZE;
+	Units[1]->Position.Y = GRID_SIZE - 1 - std::rand() % ALLOWED_POSITIONS_Y;
 }
 
 void USimulation::TryMoveUnitsCloser()

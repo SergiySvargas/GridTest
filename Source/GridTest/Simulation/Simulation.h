@@ -26,6 +26,7 @@ public:
 
 private:
 	
+	void InitUnitPositions();
 	void TryMoveUnitsCloser();
 	void TryUnitAttacks(TArray<bool>& justAttacked);
 };
