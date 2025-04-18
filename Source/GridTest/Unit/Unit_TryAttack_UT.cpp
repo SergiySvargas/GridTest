@@ -49,13 +49,13 @@ bool FUnit_TryAttack_UT::RunTest(const FString& Parameters)
 	target->HitPoints = 0;
 	target->Position = FIntVector2(6, 6);
 	attacked = attacker->TryAttack(*target);
-	check(attacked == false);
+	check(attacked == true);
 
 	attacker->HitPoints = 0;
 	target->HitPoints = 5;
 	target->Position = FIntVector2(6, 6);
 	attacked = attacker->TryAttack(*target);
-	check(attacked == false);
+	check(attacked == true);
 
 	return true;
 }

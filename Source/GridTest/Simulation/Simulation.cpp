@@ -51,16 +51,29 @@ void USimulation::TryMoveUnitsCloser()
 void USimulation::TryUnitAttacks(TArray<bool>& justAttacked)
 {
 	justAttacked.SetNum(NUM_UNITS);
+
+	static bool wasReadyToAttack[NUM_UNITS] = {false, false};
 	for (int i = 0; i < NUM_UNITS; ++i)
 	{
-		const int targetIdx = !i;
-		if (Units[i]->TryIfReadyToAttack(*Units[targetIdx]))
+		auto& target = *Units[GetTargetIdx(i)];
+		wasReadyToAttack[i] = Units[i]->TryIfReadyToAttack(target);
+	}
+
+	for (int i = 0; i < NUM_UNITS; ++i)
+	{
+		auto& target = *Units[GetTargetIdx(i)];
+		if (wasReadyToAttack[i])
 		{
-			justAttacked[i] = Units[i]->TryAttack(*Units[targetIdx]);
+			justAttacked[i] = Units[i]->TryAttack(target);
 		}
 		else
 		{
 			justAttacked[i] = false;
 		}
 	}
+}
+
+int USimulation::GetTargetIdx(int idx)
+{
+	return !idx;
 }

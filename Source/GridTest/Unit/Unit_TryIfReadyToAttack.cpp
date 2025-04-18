@@ -27,5 +27,23 @@ bool FUnit_TryIfReadyToAttack_UT::RunTest(const FString& Parameters)
 	ready = attacker->TryIfReadyToAttack(*target);
 	check(ready == true);
 
+	attacker = NewObject<UUnit>();
+	target = NewObject<UUnit>();
+	attacker->Position = FIntVector2(10, 10);
+	target->Position = FIntVector2(7, 7);
+
+	attacker->HitPoints = 0;
+	ready = attacker->TryIfReadyToAttack(*target);
+	check(ready == false);
+
+	attacker = NewObject<UUnit>();
+	target = NewObject<UUnit>();
+	attacker->Position = FIntVector2(10, 10);
+	target->Position = FIntVector2(7, 7);
+
+	target->HitPoints = 0;
+	ready = attacker->TryIfReadyToAttack(*target);
+	check(ready == false);
+
 	return true;
 }

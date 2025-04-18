@@ -7,11 +7,6 @@ UUnit::UUnit()
 
 bool UUnit::TryAttack(UUnit& target)
 {
-	if (HitPoints <= 0 || target.HitPoints <= 0)
-	{
-		return false;
-	}
-	
 	if (IsWithinAttackRange(target))
 	{
 		target.HitPoints -= 1;
@@ -23,6 +18,11 @@ bool UUnit::TryAttack(UUnit& target)
 
 bool UUnit::TryIfReadyToAttack(UUnit& target)
 {
+	if (HitPoints <= 0 || target.HitPoints <= 0)
+	{
+		return false;
+	}
+
 	if (IsWithinAttackRange(target))
 	{
 		if (CurrentAttackStep == TimeStepsPerAttack)
