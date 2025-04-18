@@ -31,10 +31,15 @@ UUnit* USimulation::GetUnit(int idx)
 	return Units[0];
 }
 
-void USimulation::SimulationTick()
+void USimulation::SimulationTick(TArray<bool>& justAttacked)
 {
-	if (TryMoveUnitsCloser() == false)
+	TryMoveUnitsCloser();
+
+	justAttacked.SetNum(NUM_UNITS);
+	for (int i = 0; i < NUM_UNITS; ++i)
 	{
+		const int targetIdx = !i;
+		justAttacked[i] = Units[i]->TryAttack(*Units[targetIdx]);
 	}
 }
 

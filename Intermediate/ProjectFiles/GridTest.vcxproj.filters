@@ -63,7 +63,7 @@
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit_MoveStepTowardsPos_UT.cpp">
       <Filter>Source\GridTest\Unit</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_Attack_UT.cpp">
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryAttack_UT.cpp">
       <Filter>Source\GridTest\Unit</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,8 +8,13 @@ UUnit::UUnit()
 	HitPoints = MIN_HP + std::rand() % (MAX_HP - MIN_HP);
 }
 
-bool UUnit::Attack(UUnit& target)
+bool UUnit::TryAttack(UUnit& target)
 {
+	if (HitPoints <= 0 || target.HitPoints <= 0)
+	{
+		return false;
+	}
+
 	const auto distance = target.Position - Position;
 	
 	if (abs(distance.X) <= AttackRange && abs(distance.Y) <= AttackRange)

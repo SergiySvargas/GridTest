@@ -20,7 +20,7 @@ public:
 	UUnit();
 
 	bool MoveStepTowardsPos(const FIntVector2& targetPos);
-	bool Attack(UUnit& target);
+	bool TryAttack(UUnit& target);
 
 private:
 	bool MoveCoordinateByDistance(int& coordinate, const int distanceCoord);

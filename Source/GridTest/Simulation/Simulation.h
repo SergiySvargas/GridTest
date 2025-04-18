@@ -22,7 +22,7 @@ public:
 	
 	UFUNCTION(BlueprintPure) UUnit* GetUnit(int idx);
 	
-	UFUNCTION(BlueprintCallable) void SimulationTick();
+	UFUNCTION(BlueprintCallable) void SimulationTick(UPARAM(ref) TArray<bool>& justAttacked);
 
 private:
 	

@@ -95,14 +95,29 @@ DEFINE_FUNCTION(USimulation::execInit)
 // Begin Class USimulation Function SimulationTick
 struct Z_Construct_UFunction_USimulation_SimulationTick_Statics
 {
+	struct Simulation_eventSimulationTick_Parms
+	{
+		TArray<bool> justAttacked;
+	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Simulation/Simulation.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_justAttacked_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_justAttacked;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USimulation_SimulationTick_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USimulation, nullptr, "SimulationTick", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_USimulation_SimulationTick_Statics::Function_MetaDataParams), Z_Construct_UFunction_USimulation_SimulationTick_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USimulation_SimulationTick_Statics::NewProp_justAttacked_Inner = { "justAttacked", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_USimulation_SimulationTick_Statics::NewProp_justAttacked = { "justAttacked", nullptr, (EPropertyFlags)0x0010000008000180, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Simulation_eventSimulationTick_Parms, justAttacked), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USimulation_SimulationTick_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USimulation_SimulationTick_Statics::NewProp_justAttacked_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USimulation_SimulationTick_Statics::NewProp_justAttacked,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_USimulation_SimulationTick_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USimulation_SimulationTick_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USimulation, nullptr, "SimulationTick", nullptr, nullptr, Z_Construct_UFunction_USimulation_SimulationTick_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USimulation_SimulationTick_Statics::PropPointers), sizeof(Z_Construct_UFunction_USimulation_SimulationTick_Statics::Simulation_eventSimulationTick_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_USimulation_SimulationTick_Statics::Function_MetaDataParams), Z_Construct_UFunction_USimulation_SimulationTick_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_USimulation_SimulationTick_Statics::Simulation_eventSimulationTick_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_USimulation_SimulationTick()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -114,9 +129,10 @@ UFunction* Z_Construct_UFunction_USimulation_SimulationTick()
 }
 DEFINE_FUNCTION(USimulation::execSimulationTick)
 {
+	P_GET_TARRAY_REF(bool,Z_Param_Out_justAttacked);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->SimulationTick();
+	P_THIS->SimulationTick(Z_Param_Out_justAttacked);
 	P_NATIVE_END;
 }
 // End Class USimulation Function SimulationTick
@@ -155,7 +171,7 @@ struct Z_Construct_UClass_USimulation_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_USimulation_GetUnit, "GetUnit" }, // 2202633585
 		{ &Z_Construct_UFunction_USimulation_Init, "Init" }, // 571588357
-		{ &Z_Construct_UFunction_USimulation_SimulationTick, "SimulationTick" }, // 3566696337
+		{ &Z_Construct_UFunction_USimulation_SimulationTick, "SimulationTick" }, // 2084982782
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -208,10 +224,10 @@ USimulation::~USimulation() {}
 struct Z_CompiledInDeferFile_FID_Code_GridTest_Source_GridTest_Simulation_Simulation_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_USimulation, USimulation::StaticClass, TEXT("USimulation"), &Z_Registration_Info_UClass_USimulation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USimulation), 3547397532U) },
+		{ Z_Construct_UClass_USimulation, USimulation::StaticClass, TEXT("USimulation"), &Z_Registration_Info_UClass_USimulation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USimulation), 2532884678U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Code_GridTest_Source_GridTest_Simulation_Simulation_h_80913411(TEXT("/Script/GridTest"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Code_GridTest_Source_GridTest_Simulation_Simulation_h_487120512(TEXT("/Script/GridTest"),
 	Z_CompiledInDeferFile_FID_Code_GridTest_Source_GridTest_Simulation_Simulation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Code_GridTest_Source_GridTest_Simulation_Simulation_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

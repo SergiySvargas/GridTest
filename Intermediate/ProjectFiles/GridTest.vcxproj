@@ -251,8 +251,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\GridTest\Simulation\Simulation.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit.cpp" />
-    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_Attack_UT.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Unit\Unit_MoveStepTowardsPos_UT.cpp" />
+    <ClCompile Include="..\..\Source\GridTest\Unit\Unit_TryAttack_UT.cpp" />
     <ClCompile Include="..\..\Source\GridTest\Utility\Utility.cpp" />
     <None Include="..\..\GridTest.uproject" />
     <None Include="..\..\Source\GridTest.Target.cs" />
